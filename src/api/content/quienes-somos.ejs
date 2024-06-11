@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partial/head') %>
+        <title>Quiénes Somos</title>
+</head>
+
+<body class="bg-info vh-100">
+
+    <%- include('../partial/nav') %>
+        <header class="d-flex flex-column">
+            <div class="somos d-flex align-items-center justify-content-center">
+                <h2 class="fs-1 fw-bold text-dark text-shadow-lg">Quiénes Somos</h2>
+            </div>
+        </header>
+        <section class="container py-5">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="fs-2 py-5 text-decoration-underline">Nuestra Historia</h4>
+                    <p class="fs-5 fw-lighter">
+                        Fundada en 2015 por un grupo de apasionados por la moda y la sostenibilidad,
+                        <span class="text-secondary fw-bold">Conscious Craft Co.</span> nació con la visión de
+                        transformar
+                        la industria de la moda femenina. Desde nuestros humildes comienzos en un pequeño estudio en
+                        Barcelona, hemos crecido hasta convertirnos en una marca reconocida a nivel internacional,
+                        manteniendo siempre nuestros valores fundamentales de ética, sostenibilidad y empoderamiento.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <p class="fs-5 fw-lighter">
+                        En <span class="text-secondary fw-bold">Conscious Craft Co.</span> creemos que la moda puede ser
+                        una
+                        fuerza para el bien.<br><br> Nuestra misión es crear prendas elegantes y de alta calidad que no
+                        solo
+                        hagan que nuestras clientas se vean y se sientan bien, sino que también tengan un impacto
+                        positivo en
+                        el mundo. Nos esforzamos por liderar con el ejemplo, demostrando que es posible combinar el
+                        estilo
+                        con la responsabilidad social y ambiental.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="fs-5 fw-lighter my-2"><span class="text-secondary fw-bold">Sostenibilidad:</span>
+                            Estamos
+                            comprometidos con la reducción de nuestra huella ambiental. Utilizamos materiales orgánicos,
+                            reciclados y de origen responsable en todas nuestras colecciones. Implementamos prácticas de
+                            producción que minimizan el desperdicio y el uso de recursos naturales.
+                        </li>
+                        <li class="fs-5 fw-lighter my-2"><span class="text-secondary fw-bold">Transparencia:</span>
+                            Creemos
+                            en la importancia de la transparencia en todas nuestras operaciones. Desde la cadena de
+                            suministro
+                            hasta nuestras prácticas de producción, nos aseguramos de que nuestros clientes sepan
+                            exactamente
+                            de dónde provienen sus prendas y cómo se fabrican.
+                        </li>
+                        <li class="fs-5 fw-lighter my-2"><span class="text-secondary fw-bold">Empoderamiento:</span> Nos
+                            dedicamos a empoderar a las mujeres en todas las etapas de nuestra cadena de valor. Esto
+                            incluye
+                            ofrecer condiciones laborales justas y seguras para nuestras trabajadoras y apoyar
+                            iniciativas
+                            que promuevan la educación y el desarrollo económico de mujeres en comunidades vulnerables.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-fluid rounded mx-auto d-block" src="/img/Blog/edificio.jpg" alt="Nuestra Historia">
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-12">
+                    <h4 class="fs-2 text-decoration-underline">Nuestro Compromiso</h4>
+                    <p class="fs-5 fw-lighter">
+                        En <span class="text-secondary fw-bold">Conscious Craft Co.</span> no solo hacemos moda; hacemos
+                        un
+                        compromiso con el planeta y sus habitantes. Cada prenda que diseñamos es una oportunidad para
+                        hacer un
+                        cambio positivo. Colaboramos con diversas organizaciones no gubernamentales y proyectos
+                        comunitarios
+                        para apoyar causas ambientales y sociales que nos importan.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="fs-5 fw-lighter my-2">Colaboración con proyectos de reforestación en el Amazonas.
+                        </li>
+                        <li class="fs-5 fw-lighter my-2">Programas de reciclaje en todas nuestras tiendas.</li>
+                        <li class="fs-5 fw-lighter my-2">Uso de empaques biodegradables y reciclables.</li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li class="fs-5 fw-lighter my-2">Becas educativas para niñas y mujeres en comunidades
+                            desfavorecidas.
+                        </li>
+                        <li class="fs-5 fw-lighter my-2">Programas de capacitación y desarrollo profesional para mujeres
+                            en la
+                            industria textil.
+                        </li>
+                        <li class="fs-5 fw-lighter my-2">Apoyo a cooperativas de artesanas locales para preservar
+                            técnicas
+                            tradicionales.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="w-100 pb-5 d-flex flex-column align-items-center">
+            <h4 class="fs-2 py-5 text-decoration-underline">Nuestro Equipo</h4>
+            <div class="container">
+                <div id="employee-slider" class="slider-container">
+                </div>
+            </div>
+        </section>
+        <%- include('../partial/footer') %>
+            <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="/app/slider.js"></script>
+</body>
+
+</html>

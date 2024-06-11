@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('../partial/head') %>
+
+    <body>
+        <%- include('../partial/nav') %>
+            <div class="encabezado-blogs">
+                <h2 class="text-encabezado-blog">Explora las historias inspiradoras y los proyectos que están marcando
+                    una diferencia en comunidades necesitadas</h2>
+                <video class="h-100 w-100" src="/img/blog/encabezado-historias.mp4" autoplay loop muted
+                    alt="video-encabezado" type="video/mp4"></video>
+            </div>
+            <main>
+                <h2 class="text-black py-2">Todos nuestros artículo</h2>
+                <section id="bucle-blog">
+                </section>
+                <section id="cabecera-blog" class="py-5">
+                </section>
+            </main>
+            <%- include('../partial/footer') %>
+
+    </body>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="module" src="/app/blog.js"></script>
+
+</html>

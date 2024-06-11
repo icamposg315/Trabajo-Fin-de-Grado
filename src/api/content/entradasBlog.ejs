@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partial/head.ejs') %>
+
+    <body>
+        <%- include('../partial/nav.ejs') %>
+            <header>
+                <h1 class="custom-title">
+                    <%= blog.titulo %>
+                </h1>
+            </header>
+            <main class="d-flex flex-column align-items-center">
+                <img class="w-100 h-full" src="<%= blog.foto_url %>" alt="<%= blog.titulo %>">
+                <div class="w-75 py-5 custom-text">
+                    <p>
+                        <%- blog.texto %>
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <p class="text-uppercase">Autor: <span class="text-secondary mx-2">
+                            <%= blog.autor %>
+                        </span></p>
+                    <p>Publicado: <span class="text-secondary mx-2">
+                            <%= new Date(blog.creado_en).toLocaleDateString() %>
+                        </span>
+                    </p>
+                </div>
+            </main>
+            <%- include('../partial/footer.ejs') %>
+    </body>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</html>

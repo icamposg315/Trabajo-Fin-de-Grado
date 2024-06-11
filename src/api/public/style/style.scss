@@ -1,0 +1,590 @@
+$primary: #fff;
+$secondary: #91A88E;
+$info: #e0e7e0;
+$danger: black;
+$font-family-base: 'literata', sans-serif;
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-sm {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/////////////////////////////////////////////////////////////// HOME ////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////  lOGO //////////////////////////////////////
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+///////////////////////////////////  NAV //////////////////////////////////////
+
+
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.navbar .nav-item .badge {
+    font-size: 0.75rem;
+    padding: 0.5em 0.6em;
+}
+
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: $info;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.container {
+    align-content: center;
+}
+
+.navbar {
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border: 0px $primary;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: lighten($secondary, 10%);
+            border-radius: 5px;
+            color: $primary;
+        }
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .navbar-toggler {
+        border: none;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+//////////////////////// FOOTER ////////////////////////////////
+
+footer {
+
+    .text-body-secondary {
+        color: $secondary;
+    }
+
+    .text-primary {
+        color: $primary;
+    }
+
+    .nav-link {
+        &:hover {
+            color: darken($secondary, 20%);
+        }
+    }
+
+    .fa-brands {
+        font-size: 1.5rem;
+
+        &:hover {
+            color: lighten($secondary, 20%);
+        }
+    }
+
+    .container {
+        @include media-breakpoint-up(md) {
+            justify-content: space-between;
+        }
+    }
+}
+
+//////////////////////// PILARES ////////////////////////////////
+
+.card-image {
+    margin: 25px 5px 25px 5px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.card-image img {
+    border-radius: 35px;
+
+}
+
+.txt-pilares {
+    width: 80%;
+}
+
+//////////////////////// BOTONES ////////////////////////////////
+
+.btn-primary {
+    border-radius: 15px;
+}
+
+.btn-primary:hover {
+    background-color: $secondary;
+    border: 1px solid $info;
+    color: $info;
+}
+
+.btn-secondary {
+    border-radius: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: $primary;
+    border: 1px solid $secondary;
+}
+
+.btn-info {
+    border: 1px solid $secondary;
+    border-radius: 15px;
+}
+
+.btn-info:hover {
+    background-color: $secondary;
+    border: 1px solid $info;
+    color: $primary;
+}
+
+//////////////////////// ENCABEZADO ////////////////////////////////
+
+h2 {
+    margin: 50px 5px 50px 5px;
+    text-align: center;
+}
+
+//////////////////////// DESTACADOS ////////////////////////////////
+
+#destacado {
+    background-image: url("../img/fondo.jpg");
+}
+
+.card {
+    border-radius: 35px;
+}
+
+.card img {
+    border-radius: 35px 35px 0px 0px;
+}
+
+//////////////////////// VALORES ////////////////////////////////
+
+.valores {
+    width: 150px;
+    height: 150px;
+}
+
+div .text-danger {
+    width: 70%;
+    text-decoration: none;
+}
+
+div .text-danger:hover {
+    text-decoration: underline;
+}
+
+//////////////////////// FONTAWESOME ////////////////////////////////
+
+i {
+    font-size: 25px;
+    color: $info;
+}
+
+/////////////////////////////////////////////////////////////// lOGIN ////////////////////////////////////////////////////////////////////////
+
+// Formulario Login
+
+#session {
+    background-image: url("../img/flores-pared.jpg") !important;
+    background-repeat: no-repeat;
+}
+
+// Formulario Registro
+
+#registro {
+    background-image: url("../img/fondo-registro.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.input-registro {
+    border-radius: 15px;
+    border: 1px solid $primary;
+    margin: 15px;
+    background-color: $info;
+    padding: 10px;
+}
+
+/////////////////////////////////////////////////////////////// REGISTRO //////////////////////////////////////////////////////////////////////
+
+.alert-success-custom {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-image: url('../img/fondo-exito.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+/////////////////////////////////////////////////////////////// TIENDA ////////////////////////////////////////////////////////////////////////
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-image: url("../img/fondo-tienda.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.text-center text-primary fs-1 {
+    font-size: 15px;
+}
+
+/////////////////////////////////////////////////////////////// GARANTIA ////////////////////////////////////////////////////////////////////////
+
+
+.garantia {
+    background-image: url("../img/Blog/garantia.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    min-height: 50vh;
+    opacity: 80%;
+}
+
+/////////////////////////////////////////////////////////////// GANANCIAS ////////////////////////////////////////////////////////////////////////
+
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .img-fluid {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .m-3 {
+        margin: 1rem !important;
+    }
+}
+
+
+/////////////////////////////////////////////////////////////// QUIENES SOMOS ////////////////////////////////////////////////////////////////////////
+
+
+.somos {
+    background-image: url("../img/Blog/oficina.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    min-height: 50vh;
+}
+
+/////////////////// SLIDER ///////////////////////////
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider-inner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card {
+    flex: 0 0 30%;
+    box-sizing: border-box;
+    margin: 0 15px;
+    height: auto;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 35vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card .info {
+    text-align: center;
+    padding: 10px;
+    min-height: 35vh;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: $info;
+    cursor: pointer;
+    padding: 1px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 90%;
+        margin: 10px auto;
+    }
+
+    .prev,
+    .next {
+        top: 40%;
+    }
+}
+
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.icon {
+    color: $secondary;
+}
+
+.icon:hover {
+    color: $danger;
+    transition: 0.5s all;
+}
+
+/////////////////////////////////////////////////////////////// CONTACTO ////////////////////////////////////////////////////////////////////////
+
+
+.fondo-contacto {
+    background-image: url("../img/Blog/contacto.jpg");
+}
+
+
+/////////////////////////////////////////////////////////////// RESPONSABILIDAD ////////////////////////////////////////////////////////////////////////
+
+
+.video-container {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/////////////////////////////////////////////////////////////// BLOG ////////////////////////////////////////////////////////////////////////
+
+.encabezado-blogs {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.text-encabezado-blog {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $danger;
+    z-index: 2;
+    font-size: 2rem;
+    text-align: center;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+    .text-encabezado-blog {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .encabezado-blogs {
+        height: 40vh;
+    }
+
+    .text-encabezado-blog {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezado-blogs {
+        height: 35vh;
+    }
+
+    .text-encabezado-blog {
+        font-size: 1.25rem;
+        top: 25%;
+    }
+}
+
+@media (max-width: 576px) {
+    .encabezado-blogs {
+        height: 30vh;
+    }
+
+    .text-encabezado-blog {
+        font-size: 1rem;
+        top: 20%;
+    }
+}
+
+.blog-entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 25vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-shadow: black;
+    color: $info;
+    font-size: large;
+    opacity: 80%;
+    overflow: hidden;
+    padding: 15px;
+}
+
+/////////////////////////////////////////////////////////////// ENTRADAS BLOGS ////////////////////////////////////////////////////////////////////////
+
+
+.text-justify {
+    text-align: justify;
+}
+
+.custom-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: $danger;
+    padding: 20px;
+    text-align: center;
+}
+
+.custom-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+// SASS
+
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/maps";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/variables";

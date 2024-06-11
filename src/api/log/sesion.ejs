@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('../partial/head') %>
+
+    <body id="session">
+        <!-- Nav -->
+        <%- include('../partial/nav') %>
+
+            <main class="form-signin w-100% d-flex justify-content-center m-5">
+                <form class="col-lg-4 text-center">
+                    <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
+
+                    <div class="form-floating m-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Correo electrónico</label>
+                    </div>
+                    <div class="form-floating m-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+
+                    <div class="form-check text-start my-3">
+                        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                        <label class="form-check-label text-danger" for="flexCheckDefault">
+                            Recuerdame
+                        </label>
+                    </div>
+                    <button class="btn btn-primary w-100 py-2" type="submit">¡Acceder!</button>
+                    <a class="text-decoration-none" href="/log/registro/">
+                        <p class="mt-5 mb-3 text-center text-dark fw-bold">¡Registrarse!</p>
+                    </a>
+                    <p class="mt-5 mb-3 text-body-dark">© 2024 Conscious Craft Co.</p>
+                </form>
+            </main>
+            <!-- Footer -->
+            <%- include('../partial/footer') %>
+
+    </body>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</html>

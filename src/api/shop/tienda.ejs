@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partial/head') %>
+        <title></title>
+</head>
+
+<body class="bg-info w-100%">
+    <%- include('../partial/nav') %>
+        <header>
+            <section class="encabezado">
+                <h1 class="text-center text-primary fs-1">Tienda</h1>
+                <p class="text-center fs-4">Un espacio donde la sostenibilidad y la naturaleza convergen en diseño</p>
+            </section>
+        </header>
+        <main class="d-flex justify-content-center vw-95">
+            <section id="registrosContainer"></section>
+        </main>
+        <%- include('../partial/footer') %>
+</body>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="module" src="/script/bucle.js"></script>
+
+</html>

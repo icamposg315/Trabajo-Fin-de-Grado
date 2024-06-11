@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partial/head') %>
+        <title></title>
+</head>
+
+<body class="bg-info w-100%">
+    <%- include('partial/nav') %>
+        <header class="bg-primary pb-4 border-bottom">
+            <div class="container d-flex flex-wrap justify-content-center align-items-center mb-3">
+                <a href="#" class="d-flex justify-content-center mb-1 mb-lg-0 mx-auto">
+                    <img class="img-fluid m-3" src="../img/Logo/Conscious Craft Co..png" alt="Conscious Craft Co.">
+                </a>
+            </div>
+        </header>
+
+        <div id="myCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img opacity-50" width="100%" height="30em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <image href="../img/quienes-somos.jpg"></image>
+                    </svg>
+                    <div class="container">
+                        <div class="carousel-caption text-center fw-bold text-dark">
+                            <h2 class="h2-responsive">Moda con conciencia, impacto positivo</h2>
+                            <p class="p-responsive">Cada producto es una expresión de nuestra dedicación al medio ambiente y la calidad. Descubre prendas y accesorios cuidadosamente elaborados con materiales orgánicos y técnicas eco-friendly, para una moda consciente y responsable</p>
+                            <p><a class="btn btn-lg btn-primary" href="/content/quienes-somos/">Quienes somos</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img opacity-50" width="100%" height="30em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <image href="../img/ropa.jpg"></image>
+                    </svg>
+                    <div class="container">
+                        <div class="carousel-caption text-center fw-bold text-dark">
+                            <h2 class="h2-responsive">Descubre las últimas novedades</h2>
+                            <p class="p-responsive">Encuentra piezas únicas que no solo lucen bien, sino que también hacen el bien para nuestro planeta. ¡Comienza tu viaje hacia una moda más consciente hoy mismo!</p>
+                            <p><a class="btn btn-lg btn-primary" href="/shop/tienda/">Ir a la tienda</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img opacity-50" width="100%" height="30em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <image href="../img/fondo-hojas.jpg"></image>
+                    </svg>
+                    <div class="container">
+                        <div class="carousel-caption text-center fw-bold text-dark">
+                            <h2 class="h2-responsive">Nuestro compromiso, es trabajar para salvar nuestro planeta.</h2>
+                            <p class="p-responsive">Desde defender lugares silvestres hasta defender la energía de propiedad comunitaria, apoyamos el activismo innovador que aborda las causas fundamentales de la crisis ambiental y busca proteger tanto el medio ambiente como las comunidades afectadas.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">¡Conocer proyectos!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        
+
+        <div class="container marketing">
+            <div class="row m-5">
+                <div
+                    class="d-flex flex-column justify-content-between align-items-center col-lg-4 col-md-6 col-sm-10 text-center mb-4">
+                    <div class="card-image">
+                        <img src="../img/bosque.jpg" class="w-100" alt="bosque">
+                    </div>
+                    <h3 class="fw-normal">Sostenibilidad</h3>
+                    <p class="txt-pilares">Se refiere al compromiso de la marca con prácticas éticas y respetuosas con
+                        el
+                        medio ambiente en cada etapa de la cadena de producción.</p>
+                </div>
+                <div
+                    class="d-flex flex-column justify-content-between align-items-center col-lg-4 col-md-6 col-sm-10 text-center mb-4">
+                    <div class="card-image">
+                        <img src="../img/etica.jpg" class="w-100" alt="ética">
+                    </div>
+                    <h3 class="fw-normal">Ética</h3>
+                    <p class="txt-pilares">Esto implica un compromiso con prácticas laborales justas y transparentes,
+                        asegurando condiciones de trabajo seguras y dignas para todos los involucrados en la producción
+                    </p>
+                </div>
+                <div
+                    class="d-flex flex-column justify-content-between align-items-center col-lg-4 col-md-6 col-sm-10 text-center mb-4">
+                    <div class="card-image">
+                        <img src="../img/artesania.jpg" class="w-100" alt="artesanía">
+                    </div>
+                    <h3 class="fw-normal">Calidad y Artesanía</h3>
+                    <p class="txt-pilares">La marca se esfuerza por ofrecer productos de alta calidad que reflejen un
+                        diseño
+                        cuidadoso y una atención meticulosa a los detalles.</p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <h2 class="fs-1 text-center">Últimas novedades</h2>
+        <section id="destacado" class="d-flex justify-content-center flex-wrap p-3 mb-5">
+            <div id="registrosContainer" class="d-flex flex-wrap justify-content-center"></div>
+        </section>
+        <section class="col-12 d-flex flex-wrap bg-info justify-content-center mb-5 mt-1">
+            <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center row m-2 text-center">
+                <img class="valores w-50" src="../img/Valores/forest-nature-plants-trees-svgrepo-com.svg" alt="arbol">
+                <p class="fs-4 text-center">Asumimos la responsabilidad de nuestro impacto.</p>
+                <a class="text-danger text-center p-2" href="/content/responsabilidad">Explora nuestra huella</a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center row m-2 text-center">
+                <img class="valores w-50" src="../img/Valores/world-1-svgrepo-com.svg" alt="mundo">
+                <p class="fs-4 text-center">Damos nuestras ganancias al planeta.</p>
+                <a class="text-danger text-center p-2" href="/content/ganancias">Lee nuestro compromiso</a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center row m-2 text-center">
+                <img class="valores w-50"
+                    src="../img/Valores/people-love-together-national-culture-paris-svgrepo-com.svg"
+                    alt="personas unidas">
+                <p class="fs-4 text-center">Garantizamos todo lo que hacemos.</p>
+                <a class="text-danger text-center p-2" href="/content/garantia">Conoce más</a>
+            </div>
+        </section>
+        <footer>
+            <%- include('partial/footer') %>
+        </footer>
+</body>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="module" src="/shop/destacados-index.js"></script>
+
+</html>
