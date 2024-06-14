@@ -3,6 +3,7 @@ import logger from 'morgan';
 import path from 'path';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { getRegistros } from '../src/api/db/obtenerProductos.js';
 import { getImagenes } from '../src/api/db/obtenerImagenes.js';
@@ -10,9 +11,11 @@ import { getProductosDestacados } from '../src/api/db/obtenerDestacados.js';
 import { getEmpleados } from '../src/api/db/obtenerEmpleados.js';
 import { getBlogBucle, getBlogCabecera, getBlogById } from '../src/api/db/obtenerBlog.js';
 import { obtenerProductos } from '../src/api/db/cargarProductos.js';
-import { carrito, agregarProductoAlCarrito } from '../src/api/db/bag.js';
+import { carrito, agregarProductoAlCarrito, actualizarCantidadEnCarrito, eliminarProductoDelCarrito } from '../src/api/db/bag.js';
 import { procesarPedido } from '../src/api/db/pedido.js';
-
+import insertRouter from '../src/api/log/insert.js';
+import loginRouter from '../src/api/log/login.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 dotenv.config({ path: './security/datos.env' });
 
 const puerto = process.env.PORT ?? 3000;
@@ -22,6 +25,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 
@@ -42,19 +46,22 @@ app.use('/db', express.static(path.join(process.cwd(), 'src', 'api', 'db')));
 app.use('/shop', express.static(path.join(process.cwd(), 'src', 'api', 'shop')));
 app.use('/app', express.static(path.join(process.cwd(), 'src', 'api', 'app')));
 app.use('/content', express.static(path.join(process.cwd(), 'src', 'api', 'content')));
+
+// Rutas para el registro e inicio de sesión
+app.use('/log/registro', insertRouter);
+app.use('/log/sesion', loginRouter);
+
 // Ruta para renderizar la vista HTML del carrito
-app.get('/shop/carrito', (req, res) => {
+app.use('/shop/carrito', (req, res) => {
     res.render('shop/carrito');
 });
-
 // Ruta para devolver el JSON del carrito
 app.get('/api/carrito', (req, res) => {
     console.log('Carrito actual:', carrito); // Verificación
     res.status(200).json(carrito);
 });
 
-// Ruta para manejar la adición de productos al carrito
-app.post('/shop/carrito', async (req, res) => {
+app.post('/api/carrito', async (req, res) => {
     const { producto_id, nombre, cantidad } = req.body;
 
     try {
@@ -67,7 +74,31 @@ app.post('/shop/carrito', async (req, res) => {
     }
 });
 
-app.post('/api/pedido', async (req, res) => {
+app.post('/shop/actualizar-cantidad', async (req, res) => {
+    const { producto_id, cantidad } = req.body;
+    try {
+        const carritoActualizado = await actualizarCantidadEnCarrito(producto_id, cantidad);
+        res.status(200).json({ mensaje: 'Cantidad actualizada', carrito: carritoActualizado });
+    } catch (error) {
+        console.error('Error al actualizar la cantidad:', error);
+        res.status(500).json({ error: 'Error al actualizar la cantidad' });
+    }
+});
+
+// Ruta para eliminar un producto del carrito
+app.post('/shop/eliminar-producto', async (req, res) => {
+    const { producto_id } = req.body;
+    try {
+        const carritoActualizado = await eliminarProductoDelCarrito(producto_id);
+        res.status(200).json({ mensaje: 'Producto eliminado', carrito: carritoActualizado });
+    } catch (error) {
+        console.error('Error al eliminar el producto:', error);
+        res.status(500).json({ error: 'Error al eliminar el producto' });
+    }
+});
+
+
+app.post('/api/pedido', authMiddleware, async (req, res) => {
     const { usuario_id, direccion_envio } = req.body;
 
     try {
@@ -77,6 +108,11 @@ app.post('/api/pedido', async (req, res) => {
         console.error('Error al procesar el pedido:', error);
         res.status(500).json({ error: 'Error al procesar el pedido' });
     }
+});
+
+app.post('/logout', (req, res) => {
+    res.clearCookie('token');
+    res.status(200).json({ message: 'Sesión cerrada correctamente' });
 });
 
 // Rutas para las vistas
@@ -148,7 +184,7 @@ app.get('/api/imagenes/:idProducto', async (req, res) => {
 app.get('/shop/destacados', async (req, res) => {
     try {
         const destacados = await getProductosDestacados();
-        console.log('Productos destacados obtenidos:', destacados); // Log para verificar
+        console.log('Productos destacados obtenidos:', destacados);
         res.json(destacados);
     } catch (error) {
         console.error('Error al obtener los productos destacados:', error);

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             button.addEventListener('click', async (event) => {
                 const productoId = event.target.getAttribute('data-id');
                 try {
-                    const response = await fetch('/shop/carrito', {
+                    const response = await fetch('/api/carrito', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

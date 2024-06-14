@@ -80,18 +80,16 @@ CREATE TABLE IF NOT EXISTS empleados (
 	empleado_id INT AUTO_INCREMENT PRIMARY KEY,
 	nombre VARCHAR (255),
     apellidos VARCHAR(255),
-    puesto VARCHAR(255)
+    puesto VARCHAR(255),
+	foto_url VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS fotos (
-	foto_id INT AUTO_INCREMENT PRIMARY KEY,
-	fotoEmpleado_id INT,
-    foto_url VARCHAR(255),
-	FOREIGN KEY (fotoEmpleado_id) REFERENCES empleados (empleado_id)
+CREATE TABLE IF NOT EXISTS blog (
+	blog_id INT AUTO_INCREMENT PRIMARY KEY,
+    creado_en date,
+    autor varchar(255),
+	titulo VARCHAR (255),
+    texto_corto VARCHAR(255),
+    texto text,
+	foto_url VARCHAR(255)
 );
-
-ALTER TABLE usuarios 
-ADD apellidos varchar(255);
-
-DROP TABLE fotos;
-DROP TABLE empleados;

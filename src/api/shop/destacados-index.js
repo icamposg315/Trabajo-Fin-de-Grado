@@ -101,7 +101,7 @@ async function cargarProductosDestacados() {
 
 const actualizarContadorCarrito = async () => {
     try {
-        const response = await fetch('/shop/carrito');
+        const response = await fetch('/api/carrito');
         if (!response.ok) {
             throw new Error('Error al obtener el carrito');
         }
